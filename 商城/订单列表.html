@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单列表</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的订单</h1>
+			<!--<a class="mui-icon iconfont icon-xiaoxi mui-pull-right"></a>-->
+		</header>
+		<!--    -->
+		<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a class="mui-control-item mui-active" href="javascript:void(0);">
+				全部订单
+			</a>
+			<a class="mui-control-item" href="javascript:void(0);">
+				待付款
+			</a>
+			<a class="mui-control-item" href="javascript:void(0);">
+				待发货
+			</a>
+			<a class="mui-control-item" href="javascript:void(0);">
+				待收货
+			</a>
+			<a class="mui-control-item" href="javascript:void(0);">
+				已完成
+			</a>
+		</div>
+
+		<!--    -->
+		<div class="mui-content order_list_page">
+			<div id="list_slider" class="mui-slider">
+				<div class="order_list">
+					<ul style="display: block;">
+						<li>
+							<div class="top">
+								<span class="fl pingtai">订单编号：125412541</span>
+								<span class="fr status">待收货</span>
+							</div>
+							<div class="center">
+								<p class="p01">郑州市河南公司已收入<span>2017-11-13 16:31</span></p>
+								<div class="img"><img src="../img/phone.jpg" alt=""></div>
+								<div class="price">
+									<div>￥3000.00</div>
+									<div class="old_price">
+										￥4000.00
+									</div>
+									<div class="number">X1</div>
+								</div>
+								<div class="txt">
+									<div class="order_list_title">weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</div>
+									<p class="guige"><span>颜色:黑色</span> <span>规格:高配</span></p>
+								</div>
+							</div>
+							<!-- -->
+							<div class="pay_price">
+								共1件商品 实付款：<span>￥3000.00</span><m>(含运费0.00元)</m>
+							</div>
+							<div class="order_list_btn">
+								<span class="line_btn_com">联系商家</span>
+								<span class="line_btn_com">查看物流</span>
+								<span class="line_btn_com active">确认收货</span>
+							</div>
+						</li>
+					</ul>
+	
+	
+					<ul style="display: ;">
+						<li>
+							<div class="top">
+								<span class="fl pingtai">订单编号：125412512341</span>
+								<span class="fr status">待支付</span>
+							</div>
+							<div class="center">
+								<!--<p class="p01">郑州市河南公司已收入<span>2017-11-13 16:31</span></p>-->
+								<div class="img"><img src="../img/phone.jpg" alt=""></div>
+								<div class="price">
+									<div>￥3000.00</div>
+									<div class="old_price">
+										￥4000.00
+									</div>
+									<div class="number">X1</div>
+								</div>
+								<div class="txt">
+									<div class="order_list_title">weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</div>
+									<p class="guige"><span>颜色:黑色</span> <span>规格:高配</span></p>
+								</div>
+							</div>
+							<!-- -->
+							<div class="pay_price">
+								共1件商品 实付款：<span>￥3000.00</span><m>(含运费0.00元)</m>
+							</div>
+							<div class="order_list_btn">
+								<span class="line_btn_com">联系商家</span>
+								<span class="line_btn_com">查看物流</span>
+								<span class="line_btn_com">付款</span>
+							</div>
+						</li>
+					</ul>
+		</div>
+
+		</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-2.1.1.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+
+			//  
+			var orderSlide = function() {
+				var orderListBtn = mui('#sliderSegmentedControl a'),
+					order_list = mui('.order_list ul');
+
+				for(var i = 0, len = orderListBtn.length; i < len; i++) {
+
+					orderListBtn[i].index = i;
+
+					orderListBtn[i].addEventListener('tap', function() {
+						for(var i = 0; i < order_list.length; i++) {
+							order_list[i].style.display = 'none';
+						};
+
+
+                           try{
+                           	  order_list[this.index].style.display = 'block';
+                           	  
+                           }catch(e){
+                           	
+                           	  console.warn(e)
+                           }
+						
+
+					}, false)
+
+				}
+
+			};
+
+			orderSlide();
+		</script>
+	</body>
+
+
+
+
+</html>

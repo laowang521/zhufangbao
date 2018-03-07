@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>评价内容</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+	<body>
+		<!--头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow">
+			<h1 class="mui-title sx_head">筛选</h1>
+		</header>
+		<div class="mui-content sx_content">
+			<section class="sx_flsec">
+				<div class="sx_top">
+					<b class="fl">商品分类</b>
+					<span class="fr">全部<i class="sx_active_rotate iconfont icon-arrLeft-fill sx_active_rotate"></i></span>
+				</div>
+				<ul class="sx_main">
+					<li><span>洁面粉</span></li>
+					<li><span>卸妆乳</span></li>
+					<li><span>卸妆油</span></li>
+					<li><span>洁面乳</span></li>
+					<li><span>洁面霜</span></li>
+					<li><span>卸妆水</span></li>
+					<li><span>洁面粉</span></li>
+					<li><span>卸妆乳</span></li>
+					<li><span>卸妆油</span></li>
+					<li><span>洁面乳</span></li>
+					<li><span>洁面霜</span></li>
+					<li><span>卸妆水</span></li>
+				</ul>
+			</section>
+			<section class="sx_spsec">
+				<div class="sx_top">
+					<b class="fl">品牌</b>
+					<span class="fr">全部<i class="sx_active_rotate iconfont icon-arrLeft-fill"></i></span>
+				</div>
+				<ul class="sx_main">
+					<li><span>DHC</span></li>
+					<li><span>美宝莲</span></li>
+					<li><span>欧莱雅</span></li>
+					<li><span>百雀羚</span></li>
+					<li><span>兰蔻</span></li>
+					<li><span>阿芙</span></li>
+					<li><span>DHC</span></li>
+					<li><span>美宝莲</span></li>
+					<li><span>欧莱雅</span></li>
+					<li><span>百雀羚</span></li>
+					<li><span>兰蔻</span></li>
+					<li><span>阿芙</span></li>
+				</ul>
+			</section>
+			<section class="sx_jgsec">
+				<div class="sx_top">
+					<b class="fl">价格区间</b>
+					<span class="fr">全部<i class="sx_active_rotate iconfont icon-arrLeft-fill"></i></span>
+				</div>
+				<div class="sx_qujian">
+					<input type="number" name="" value="" placeholder="最低价"/>—
+					<input type="number" name="" value="" placeholder="最高价"/>
+				</div>
+			</section>
+			<section class="sx_qtsec">
+				<div class="sx_top">
+					<b class="fl">其他条件</b>
+					<span class="fr">全部<i class="sx_active_rotate iconfont icon-arrLeft-fill"></i></span>
+				</div>
+				<ul class="sx_tj">
+					<li><i class="iconfont icon-dui"></i>显示全部</li>
+					<li><i class="iconfont"></i>网站自营</li>
+					<li><i class="iconfont"></i>入驻商家</li>
+				</ul>
+			</section>
+		</div>
+		<div class="nav_bom">
+			<div class="nav_bom_clear">
+				取消筛选
+			</div>
+			<div class="nav_bom_enter">
+				确定
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script src="../js/jquery-2.1.1.min.js"></script>
+
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			$('.sx_main li').click(function(){
+				$(this).addClass('sx_active').siblings().removeClass('sx_active');
+			});
+			$('.sx_top span').click(function(){
+				$(this).parents('.sx_top').siblings('.sx_main').toggleClass('sx_active_height');
+				$(this).find('i').toggleClass('sx_active_rotate');
+			});
+			$('.sx_tj li').click(function(){
+				$(this).find('i').addClass('icon-dui').parents('li').siblings().find('i').removeClass('icon-dui')
+			})
+		</script>
+	</body>
+</html>

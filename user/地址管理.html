@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地址管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_rf5hu5739h4ims4i.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">地址管理</h1>
+		</header>
+		<div class="mui-content">
+			<section class="site_sec">
+				<div class="site_sectop">
+					<div class="site_name">
+						<span class="">刘先森</span>
+						<span class="span_rt">18684787888</span>
+					</div>
+					<h5>河南省郑州市二七区大学路康桥华城10号楼1911室</h5>
+				</div>
+				<div class="site_secbom">
+					<div class="site_lft dzgl_active">
+						<div class="sopping_main_left">
+							<i class="iconfont"></i>
+						</div>默认地址
+					</div>
+					<div class="site_rgh">
+						<span><i class="site_bian iconfont icon-bianji"></i>编辑</span>
+						<span><i class="site_shan iconfont icon-web-icon-"></i>删除</span>
+					</div>
+				</div>
+			</section>
+			<section class="site_sec">
+				<div class="site_sectop">
+					<div class="site_name">
+						<span class="">刘先森</span>
+						<span class="span_rt">18684787888</span>
+					</div>
+					<h5>河南省郑州市二七区大学路康桥华城10号楼1911室</h5>
+				</div>
+				<div class="site_secbom">
+					<div class="site_lft">
+						<div class="sopping_main_left">
+							<i class="iconfont"></i>
+						</div>默认地址
+					</div>
+					<div class="site_rgh">
+						<span><i class="site_bian iconfont icon-bianji"></i>编辑</span>
+						<span><i class="site_shan iconfont icon-web-icon-"></i>删除</span>
+					</div>
+				</div>
+			</section>
+			<section class="site_sec">
+				<div class="site_sectop">
+					<div class="site_name">
+						<span class="">刘先森</span>
+						<span class="span_rt">18684787888</span>
+					</div>
+					<h5>河南省郑州市二七区大学路康桥华城10号楼1911室</h5>
+				</div>
+				<div class="site_secbom">
+					<div class="site_lft">
+						<div class="sopping_main_left">
+							<i class="iconfont"></i>
+						</div>默认地址
+					</div>
+					<div class="site_rgh">
+						<span><i class="site_bian iconfont icon-bianji"></i>编辑</span>
+						<span><i class="site_shan iconfont icon-web-icon-"></i>删除</span>
+					</div>
+				</div>
+			</section>
+			<div class="dzgl_but">
+				添加新地址
+			</div>
+		</div>
+		<!--暂无服务-->
+		<div class="zanwu">
+			<div class="zanwu_main">
+				<p>还没有添加新地址哦</p>
+			</div>
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			$('.site_secbom .site_lft').on('tap', function() {
+				$('.site_secbom .site_lft').removeClass('dzgl_active');
+				$(this).toggleClass('dzgl_active');
+			});
+		</script>
+	</body>
+</html>

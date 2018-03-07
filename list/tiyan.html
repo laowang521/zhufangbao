@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>体验专区</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">体验专区</h1>
+			<a class="mui-icon iconfont icon-shupaifangshi mui-pull-right" id="list_toggle"></a>
+		</header>
+		<div class="mui-content">
+			<!--第一栏-->
+			<ul class="sp_list_top">
+				<li><span>最新</span><i class="iconfont icon-arrLeft-fill"></i></li>
+				<li><span>销量</span><i class="iconfont icon-arrLeft-fill"></i></li>
+				<li><span>更新</span><i class="iconfont icon-arrLeft-fill"></i></li>
+				<li><span>价格</span><i class="iconfont icon-arrLeft-fill"></i></li>
+				<i class="iconfont icon-shaixuan saixuan"><span>筛选</span></i>
+			</ul>
+		<div class="zhezhao">
+			<ul class="zhezaho_main">
+				<li>最近三天 <i class="iconfont"></i></li>
+				<li>最近一周<i class="iconfont"></i> </li>
+				<li>最近一月<i class="iconfont"></i></li>
+			</ul>
+		</div>
+		<div class="zhezhao">
+			<ul class="zhezaho_main">
+				<li>从高到低<i class="iconfont"></i></li>
+			</ul>
+		</div>
+		<div class="zhezhao">
+			<ul class="zhezaho_main">
+				<li>最近三天更新<i class="iconfont"></i></li>
+				<li>最近一月更新<i class="iconfont"></i></li>
+				<li>最近三月跟新<i class="iconfont"></i></li>
+			</ul>
+		</div>
+		<div class="zhezhao">
+			<ul class="zhezaho_main">
+				<li>价格由高到低<i class="iconfont"></i></li>
+				<li>价格由低到高<i class="iconfont"></i></li>
+			</ul>
+		</div>
+		<!--第一栏完-->
+		<!--内容列表-->
+			<div class="sp_list_main">
+				<ul class="list_mian_ul">
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/list.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>索尼 ILCE-6000L APS-C单镜头微单相机 黑色</h1>
+									
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>1299</b><s>1400</s></span>
+									<i class="iconfont icon-gouwuche1"></i>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/list.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>索尼 ILCE-6000L APS-C单镜头微单相机 黑色</h1>
+									
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>1299</b><s>1400</s></span>
+									<i class="iconfont icon-gouwuche1"></i>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/list.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>索尼 ILCE-6000L APS-C单镜头微单相机 黑色</h1>
+									
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>1299</b><s>1400</s></span>
+									<i class="iconfont icon-gouwuche1"></i>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/list.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>索尼 ILCE-6000L APS-C单镜头微单相机 黑色</h1>
+									
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>1299</b><s>1400</s></span>
+									<i class="iconfont icon-gouwuche1"></i>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<!--内容列表完-->
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			//列表头部
+			$('.sp_list_top li').click(function(){
+				$(this).addClass('color_list_top').siblings().removeClass('color_list_top');
+				$('.zhezhao').hide().eq($(this).index()).show();
+			});
+			$('.zhezhao').click(function(){
+				$('.zhezhao').hide();
+				$('.sp_list_top li').removeClass('color_list_top');
+			});
+			$('.zhezaho_main li').click(function(){
+				$(this).addClass('color_zz_main').siblings().removeClass('color_zz_main');
+				$(this).parents('.zhezaho_main').find('i').removeClass('icon-dui');
+				$(this).find('i').addClass('icon-dui');
+			});
+			//竖排横排
+			$('#list_toggle').click(function(){
+				$(this).toggleClass('list_toggle');
+			});
+			$('#list_toggle').click(function(){
+				$('.sp_list_main ul').toggleClass('list_mian_ul');
+				$('.sp_list_main li').toggleClass('list_shu');
+			})
+		</script>
+	</body>
+</html>

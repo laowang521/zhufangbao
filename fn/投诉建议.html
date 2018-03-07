@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>投诉建议</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_z87x62jmr52ymn29.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow header_red">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">投诉建议</h1>
+			<a id="alertBtn" class="mui-icon  mui-pull-right title_font">投建记录</a>
+		</header>
+		<!-- content  -->
+		<div class="mui-content">
+			<div class="new_gd mat10">
+
+				<div id="showUserPicker" class="msg_list que_type">
+					<div class="list_l ">
+						<span>选择类型</span>
+					</div>
+					<div class="list_r">
+						<span id="userResult"></span><i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+
+				<div class="question">
+
+					<textarea id="question_text" name="" rows="" cols="" placeholder="请简要描述报修问题，字数为6~256"></textarea>
+
+				</div>
+
+				<div class="up_img" id="up_img">
+
+				</div>
+			</div>
+		</div>
+		<div class="isAnonymous">
+			<!--  active  为选中状态 -->
+			<div class="icon_wrap"><span class="iconfont"></span></div>匿名
+		</div>
+		
+		<br />
+		<button type="submit" class="btn_com">提交</button>
+	
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var baoxiuleixing = [{
+				id: '1',
+				text: '管理'
+			}, {
+				id: '2',
+				text: '硬件'
+			}, {
+				id: '3',
+				text: '费用'
+			},{
+				id: '4',
+				text: '环境'
+			}];
+
+				$('#showUserPicker').setPicker({
+					data:baoxiuleixing,
+					resultEle:'#userResult',
+					resultType:'text'
+	
+				});
+
+
+
+			$('.isAnonymous').on('tap',function(){
+				$(this).toggleClass('active');
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+			<title>发布</title>
+
+			<link href="../css/mui.min.css" rel="stylesheet" />
+			<link rel="stylesheet" type="text/css" href="../css/mui.picker.css"/>
+			<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+			<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+			<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		</head>
+	</head>
+	<body>
+		<!--头 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发布</h1>
+		</header>
+
+		<!--  content  -->
+		<div class="mui-content llqfb">
+			<div class="lx">
+				<span>类型</span><span id="showUserPicker" class="check"><m id="userResult">生活圈子</m><i class="icon-jiantouarrow486 iconfont"></i></span>
+			</div>
+			<div class="lx">
+				<span>标题</span><input type="text" placeholder="请输入您的标题"/>
+			</div>
+			<div class="lx lx3">
+				<span>内容</span>
+				<textarea name="" rows="3" cols="" placeholder="请输入您要发布的内容"></textarea>
+			</div>
+			<div class="up_img_wrap">
+						<div class="up_img" id="up_img">
+
+				</div>
+			</div>
+			<br />
+			<br />
+			<br />
+			<button class="btn_com">发布</button>
+		</div>
+
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
+	<script src="../js/jquery-2.1.1.min.js"></script>
+	<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+$(function(){
+	
+	
+	
+	         var data= [{
+						value: '生活圈子1',
+						text: '生活圈子1'
+					}, {
+						value: '生活圈子2',
+						text: '生活圈子2'
+					}, {
+						value: '生活圈子3',
+						text: '生活圈子3'
+					}];
+					
+					
+					$('#showUserPicker').setPicker({
+						
+						data:data,
+						resultEle:'#userResult'
+					})
+					
+					
+})
+		</script>
+</html>

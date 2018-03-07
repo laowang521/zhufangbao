@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>缴费记录</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_ectk2fmlorsh5mi.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.dtpicker.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow header_red">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">缴费记录</h1>
+			<div class="headDateSelect" id="headDateSelect">
+				<span  id="jiaofei_date">2018-03</span> <span class="iconfont icon-jiantouarrow486"></span>
+			</div>
+		</header>
+
+		<!-- content  -->
+		<div class="mui-content">
+		  
+		  <ul class="jiaofei_list">
+		  	<li>
+		  		<span>物业费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  			  	<li>
+		  		
+		  		<span>水费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  			  	<li>
+		  		
+		  		<span>电费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  			  	<li>
+		  		
+		  		<span>停车费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  			  	<li>
+		  		
+		  		<span>燃气费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  		  			  	<li>
+		  		
+		  		<span>暖气费</span>
+		  		<span>￥100.00</span>
+		  		<span>2018-1-10</span>
+		  		
+		  	</li>
+		  </ul>
+		     
+		
+	
+		</div>
+
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.dtpicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script>
+
+		var nowDate = new Date();
+		var endYear = nowDate.getFullYear(),
+			endMonth = nowDate.getMonth() + 1
+			
+		var dataOptions =
+		{"type":"month",
+		 "endYear":endYear,
+		 "endMonth":endMonth };
+	 
+	
+	$('#headDateSelect').setPicker({
+		isDate: true,
+		dateOptions: dataOptions,
+		resultEle:'#jiaofei_date',
+		resultType: 'text'
+	})
+	
+	
+</script>
+
+
+
+
+
+
+
+	</body>
+
+</html>

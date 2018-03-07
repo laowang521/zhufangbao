@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>积分商城</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_jxl3375n4lpu8fr.css"/>
+	</head>
+	<body>
+
+		<header class="mui-bar mui-bar-nav flhead">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">积分商城</h1>
+			<a class="mui-icon iconfont icon-gouwuche mui-pull-right"></a>
+		</header>
+		<div class="mui-content goods_list goods_list2 jfshop">
+			<!--第一栏-->
+			<ul class="sp_list_top2">
+				<img src="../img/dongtai_img.jpg" alt="" />
+				<div>
+					<p>昵称</p>
+					<p>累计积分：<m>12563分</m></p>
+				</div>
+			</ul>
+		<!--第一栏完-->
+		<!--内容列表-->
+			<div class="sp_list_main">
+				<ul class="list_mian_ul">
+					<p class="duih">积分兑好礼</p>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/phone.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>425</b><m class="userjf">+<span class="iconfont icon-29">30</span></m></span>
+									<p>售价￥<span>120</span>元</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/phone.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>425</b><m class="userjf">+<span class="iconfont icon-29">30</span></m></span>
+									<p>售价￥<span>120</span>元</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/phone.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>425</b><m class="userjf">+<span class="iconfont icon-29">30</span></m></span>
+									<p>售价￥<span>120</span>元</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list_itme">
+							<div class="list_img">
+								<img src="../img/phone.jpg"/>
+							</div>
+							<div class="list_right">
+								<div class="list_right_top">
+									<h1>weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+								</div>
+								<div class="list_right_bom">
+									<span>¥<b>425</b><m class="userjf">+<span class="iconfont icon-29">30</span></m></span>
+									<p>售价￥<span>120</span>元</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<!--内容列表完-->
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			//列表头部
+			$('.sp_list_top li').click(function(){
+				$(this).addClass('color_list_top').siblings().removeClass('color_list_top');
+				$('.zhezhao').hide().eq($(this).index()).show();
+			});
+			$('.zhezhao').click(function(){
+				$('.zhezhao').hide();
+				$('.sp_list_top li').removeClass('color_list_top');
+			});
+			$('.zhezaho_main li').click(function(){
+				$(this).addClass('color_zz_main').siblings().removeClass('color_zz_main');
+				$(this).parents('.zhezaho_main').find('i').removeClass('icon-dui');
+				$(this).find('i').addClass('icon-dui');
+			});
+			//竖排横排
+//			$('#list_toggle').click(function(){
+//				$(this).toggleClass('list_toggle');
+//			});
+//			$('#list_toggle').click(function(){
+//				$('.sp_list_main ul').toggleClass('list_mian_ul');
+//				$('.sp_list_main li').toggleClass('list_shu');
+//			})
+			
+			//横竖切换
+			$(".saixuan").click(function(){
+				$(this).toggleClass('icon-tubiao_liebiaopailie')
+				$(".goods_list").toggleClass('goods_list2')
+			})
+		</script>
+		
+	</body>
+
+</html>

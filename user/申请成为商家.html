@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>申请成为商家</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow">
+
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">申请成为商家</h1>
+			
+		</header>
+
+
+<style>
+	
+	.chengweishangjia .shangjia_group{
+		background: #fff;
+		margin-top:8px
+	}
+	
+	.chengweishangjia .shangjia_group .up_img_title{
+		
+		padding: 10px 0 0 10px;
+		color: #333;
+		margin:0
+	}
+	
+	
+</style>
+		<!-- content  -->
+		<div class="mui-content chengweishangjia">
+
+
+
+<div class="shangjia_group">
+				<div class="msg_list">
+				<div class="list_l">
+					<span>商家名称</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="请输入商家名称" />
+				</div>
+			</div>
+			
+		<div class="msg_list">
+				<div class="list_l">
+					<span>商家电话</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="tel" placeholder="用户浏览时联系" />
+				</div>
+			</div>
+			
+					<div class="msg_list">
+				<div class="list_l">
+					<span>负责人</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text"  placeholder="请填写负责人" />
+				</div>
+			</div>
+			
+			<div class="msg_list">
+				<div class="list_l">
+					<span>商家类别</span>
+				</div>
+				<div class="list_r grzl_input_wrap" id="choose_leibie">
+					<input type="text" class="shenqing_result" placeholder="请选择商家类别" />
+				</div>
+			</div>
+			
+			<div class="msg_list">
+				<div class="list_l">
+					<span>商家地址</span>
+				</div>
+				<div class="list_r grzl_input_wrap" id="choose_address">
+					<input type="text" class="shenqing_result" placeholder="请选择商家地址" />
+				</div>
+			</div>
+			
+						<div class="msg_list">
+				<div class="list_l">
+					<span>详细地址</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="请输入详细地址" />
+				</div>
+			</div>
+			
+				<div class="msg_list">
+				<div class="list_l">
+					<span>商家简介</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="商家简介" />
+				</div>
+			</div>
+	
+	
+	
+</div>
+<!--   -->
+
+
+	<div class="shangjia_group new_gd">
+		
+			<div class="question">
+					<textarea id="question_text" name="" rows="" cols="" placeholder="请简要描述报修问题，字数为6~256"></textarea>
+				</div>
+		
+		
+	</div>
+
+	<div class="shangjia_group new_gd">
+		<p class="up_img_title">上传营业执照</p>
+			<div class="up_img" id="up_img">
+
+				</div>
+
+	</div>
+	
+		<div class="shangjia_group new_gd">
+		<p class="up_img_title">上传商家头像</p>
+			<div class="up_img" id="up_img">
+
+				</div>
+
+	</div>
+	
+			<div class="shangjia_group new_gd">
+		<p class="up_img_title">上传商家图片</p>
+			<div class="up_img" id="up_img">
+
+				</div>
+
+	</div>
+
+<br /><br />
+<button type="submit" class="btn_com">提交</button>
+<br />
+		</div>
+	</body>
+	<script src="../js/jquery-2.1.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+		$(function() {
+
+			var leibie_data = [{
+				
+				text: '快递'
+			}, {
+				
+				text: '商店'
+			}, {
+				
+				text: '停车服务'
+			}];
+			
+			$('#choose_leibie').setPicker({
+				data:leibie_data,
+				layer:1,
+				resultType:'val',
+				resultEle:'.shenqing_result'
+
+			});
+
+
+			//选择城市
+			$('#choose_address').setPicker({
+				data:cityData3 ,
+				layer:3,
+				resultType:'val',
+				resultEle:'.shenqing_result'
+			});
+			
+		
+
+
+		})
+	</script>
+
+</html>

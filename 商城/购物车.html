@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_rf5hu5739h4ims4i.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav sopping">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">购物车</h1>
+			<button class="mui-icon-right-nav mui-pull-right sopping_clear">删除</button>
+		</header>
+		<div class="mui-content gwc">
+			<!--内容列表-->
+			<div class="sopping_list_main">
+				<ul class="sopping_mian_ul">
+					<div class="mui-clearfix"></div>
+					<li>
+						<div class="sopping_main_dui">
+							<div class="sopping_main_left">
+								<i class="iconfont"></i>
+							</div>
+						</div>
+						<div class="sopping_itme">
+							<div class="sopping_img">
+								<img src="../img/phone.jpg" />
+							</div>
+							<div class="sopping_right">
+								<div class="sopping_right_top">
+									<h1>weiimi/唯米 7S正品全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+									<p><span>颜色:黑色</span> <span>规格:高配</span></p>
+								</div>
+								<div class="sopping_right_bom">
+									<span>¥<b class="one_price">455.00</b></span>
+									<div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+										<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+										<input class="mui-input-numbox" type="number" disabled="disabled" />
+										<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="sopping_main_dui">
+							<div class="sopping_main_left">
+								<i class="iconfont"></i>
+							</div>
+						</div>
+						<div class="sopping_itme">
+							<div class="sopping_img">
+								<img src="../img/phone.jpg" />
+							</div>
+							<div class="sopping_right">
+								<div class="sopping_right_top">
+									<h1>weiimi/唯米 7S正品全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+									<p><span>颜色:黑色</span> <span>规格:高配</span></p>
+								</div>
+								<div class="sopping_right_bom">
+									<span>¥<b class="one_price">455.00</b></span>
+									<div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+										<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+										<input class="mui-input-numbox" type="number" disabled="disabled" />
+										<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="sopping_main_dui">
+							<div class="sopping_main_left">
+								<i class="iconfont"></i>
+							</div>
+						</div>
+						<div class="sopping_itme">
+							<div class="sopping_img">
+								<img src="../img/phone.jpg" />
+							</div>
+							<div class="sopping_right">
+								<div class="sopping_right_top">
+									<h1>weiimi/唯米 7S正品全网通4g指纹一体机5.5英寸智能手机移动电信</h1>
+									<p><span>颜色:黑色</span> <span>规格:高配</span></p>
+								</div>
+								<div class="sopping_right_bom">
+									<span>¥<b class="one_price">455.00</b></span>
+									<div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+										<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+										<input class="mui-input-numbox" type="number" disabled="disabled" />
+										<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--内容列表完-->
+			<!--底部全选-->
+			<div class="sopping_dele">
+				<div class="sopping_dele_left">
+					<div class="sopping_main_left AllCheck" id="AllCheck">
+						<i class="iconfont"></i>
+					</div>
+					<span class="quanxuan">全选</span>
+					<span class="sopping_math">合计：<b id="AllTotal">¥88884.00</b></span>
+				</div>
+				<button class="sopping_but_dele">去结算(<span class="total_goods_number">0</span>)</button>
+			</div>
+			<!--空的购物车 隐藏中-->
+			<div class="kongkong">
+				<i class="iconfont icon-konggouwuche"></i>
+				<h3>购物车是空的</h3>
+				<a href="">逛逛商品</a>
+			</div>
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			$(function() {
+				TotalPrice();
+				$('.sopping_mian_ul .sopping_main_dui').on('tap', function() {
+					if(!$(this).closest('li').hasClass('active')) {
+						$(this).closest('li').addClass('active');
+						TotalPrice();
+					} else {
+						$(this).closest('li').removeClass('active');
+						TotalPrice();
+					}
+					//区域选中
+					var len = $(this).parents('.sopping_mian_ul').find('li').length; //2
+
+					if($(this).parents('.sopping_mian_ul').find('li.active').length == len) {
+
+						$(this).parents('.sopping_mian_ul').find(".title_quyu").addClass('active');
+					}
+					//取消
+					if($(this).parents('.sopping_mian_ul').find('li.active').length < len) {
+						$('#AllCheck').removeClass('active');
+						$(this).parents('.sopping_mian_ul').find(".title_quyu").removeClass('active');
+					}
+					//全选
+					var lens = $(this).parents('.sopping_list_main').find('li').length;
+
+					if($(this).parents('.sopping_list_main').find('li.active').length == lens) {
+						$('#AllCheck').addClass('active');
+					};
+					TotalPrice();
+				});
+
+				// 数量减
+				$(".mui-btn-numbox-minus").click(function() {
+					TotalPrice();
+				});
+				// 数量加
+				$(".mui-btn-numbox-plus").click(function() {
+					TotalPrice();
+				});
+				// 点击全选按钮
+				$("#AllCheck").click(function() {
+					if($(this).hasClass('active')) {
+						$(this).removeClass('active');
+						$('.sopping_mian_ul li').removeClass('active');
+						$('.title_quyu').removeClass('active');
+						TotalPrice();
+					} else {
+						$(this).addClass('active');
+						$('.sopping_mian_ul li').addClass('active');
+						$('.title_quyu').addClass('active');
+						TotalPrice();
+					}
+				});
+				//点击区域全选
+				$('.title_quyu').on('tap', function() {
+					if($(this).hasClass('active')) {
+						$(this).removeClass('active');
+						$(this).parents('.sopping_mian_ul').find('li').removeClass('active');
+						TotalPrice();
+					} else {
+						$(this).addClass('active');
+						$(this).parents('.sopping_mian_ul').find('li').addClass('active');
+						TotalPrice();
+					}
+					TotalPrice();
+				})
+				//删除
+				$('.sopping_clear').on('tap', function() {
+					var btnArray = ['取消', '确定'];
+					mui.confirm('确定要删除吗？', '提示', btnArray, function(e) {
+						if(e.index == 1) {
+							$('.sopping_mian_ul li.active').remove();
+							TotalPrice();
+							if($('.sopping_mian_ul li').length == 0) {
+								$("#AllCheck").removeClass('active');
+								$('.kongkong').show();
+							}
+						} else {}
+					});
+				});
+				//计算
+				function TotalPrice() {
+					var allprice = 0; //总价
+					var total_goods_number = $('.total_goods_number');
+					total_goods_number.text(0);
+					$(".sopping_mian_ul li").each(function() { //循环每个店铺
+						if($(this).hasClass('active')) { //如果该商品被选中
+							var num = parseInt($(this).find(".mui-input-numbox").val()) - 0; //得到商品的数量
+							var price = parseFloat($(this).find(".one_price").text()) - 0; //得到商品的单价
+							var total = price * num; //计算单个商品的总价
+							allprice += total; //计算该店铺的总价
+							//total_goods_number[0].textContent= total_goods_number[0].textContent-0;
+							total_goods_number[0].textContent++;
+						}
+					});
+					$("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
+				}
+			});
+		</script>
+	</body>
+
+</html>

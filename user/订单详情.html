@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单详情</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_jxl3375n4lpu8fr.css" />
+	</head>
+
+	<body>
+		<!--  头 -->
+
+		<header class="mui-bar mui-bar-nav" style="box-shadow: 0 0 0 0 rgba(255,255,255,0);">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">订单详情</h1>
+			<!--<a class="mui-icon iconfont icon-xiaoxi mui-pull-right"></a>-->
+		</header>
+
+		<!--    -->
+		<div class="mui-content confirm_order">
+
+			<div class="address mui-clearfix">
+
+				<div class="address_icon">
+					<span class="iconfont icon-dizhi">
+					</span>
+
+				</div>
+				<div class="address_main">
+
+					<h3>收货人：张三     186****9999 <span class="status">待收货</span></h3>
+					<p>收货地址：河南省郑州市二七区大学路康桥华城10号楼</p>
+				</div>
+
+				<div class="arrow_right">
+					<span class="iconfont icon-youjiantou-01"></span>
+				</div>
+			</div>
+
+			<div class="order_goods_info zhufang_order_detail">
+
+				<div class="center">
+					<div class="img"><img src="../img/phone.jpg" alt=""></div>
+
+					<div class="txt">
+						<div class="order_list_title">weiimi/唯米 7S正品 全网通4g指纹一体机5.5英寸智能手机移动电信</div>
+						<p class="pz"><span>颜色:黑色</span> <span>规格:高配</span></p>
+						<div class="confirm_order_info_price">
+							<span class="menay_red">￥1600.00 <br /><s>￥1900.00</s></span><span class="fr">X1</span>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--   -->
+
+			<div class="order_detail_payInfo">
+				<div class="item">
+
+					<span class="fl">支付方式</span>
+					<span class="fr">微信支付</span>
+				</div>
+
+				<div class="item">
+
+					<span class="fl">运费险</span>
+					<span class="fr">￥0.00</span>
+				</div>
+
+				<div class="item">
+
+					<span class="fl">商品金额</span>
+					<span class="fr">￥425.00</span>
+				</div>
+
+				<div class="item">
+
+					<span class="fl">积分</span>
+					<span class="fr pay_money">20</span>
+				</div>
+
+				<div class="item">
+
+					<span class="fr shifukuan">实付款：￥306.00</span>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-2.1.1.min.js"></script>
+
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+		</script>
+	</body>
+
+</html>

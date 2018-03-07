@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>车位租赁费</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link href="../css/mui.picker.min.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车位租赁费</h1>
+		</header>
+		<div class="mui-content add_dz">
+			<div class="wybg">
+				<div class="wybg_main wybg_active">
+					<form action="" method="post">
+						<ul class="wybg_int">
+							<li><span>业主</span><span class="span2">陈群</span></li>
+							<li><span>楼栋房号</span><span class="span2">1203</span></li>
+							<li><span>手机号码</span><span class="span2">13202022526</span></li>
+							<li>
+								<span>周期单位</span>
+								<select class="zq" name="">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
+									<option value="">5</option>
+								</select>
+								<span class="span2">月</span>
+							</li>
+							<li>
+								<span>开缴日期</span>
+								<input id="result" data-options='{"type":"date"}' class="btn" value="点击选择" />
+							</li>
+
+							<li><span>缴费单价</span><span class="span2">100</span></li>
+							
+						</ul>
+						<h3><li><span>需缴费金额</span><span class="span3">￥<m>100.00</m></span></li></h3>
+						<div class="wybg_but">
+							<button>充值</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../js/mui.picker.min.js"></script>
+			<script src="../js/mui.poppicker.js"></script>
+			<script src="../js/user.js"></script>
+
+			<script>
+				$('#result').setPicker({
+					resultEle: '#result',
+					resultType: 'val',
+					isDate: true,
+					dateOptions: {
+						"type": "date"
+					}
+				});
+			</script>
+
+	</body>
+
+</html>

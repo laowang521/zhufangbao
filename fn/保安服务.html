@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>保安服务</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.dtpicker.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow header_red">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">保安服务</h1>
+			<a id="alertBtn" class="mui-icon  mui-pull-right title_font">历史记录</a>
+		</header>
+		<!-- content  -->
+		<div class="mui-content">
+			<div class="new_gd">
+
+				<div class="question">
+
+					<textarea id="question_text" placeholder="请保安服务内容"></textarea>
+
+				</div>
+
+				<div id="kuaidi_yuyue_date" class="msg_list que_type">
+
+					<div class="list_l ">
+						<span>预约日期</span>
+					</div>
+					<div class="list_r">
+						<input type="text" id="yuyue_date" placeholder="选择预约日期" />
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+		<br />
+		<button type="submit" class="btn_com">提交</button>
+
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.dtpicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	
+		var nowDate = new Date();
+		var beginYear = nowDate.getFullYear(),
+			beginMonth = nowDate.getMonth() + 1,
+			beginDay = nowDate.getDate(),
+			beginHours = nowDate.getHours() - 1;
+		var dataOptions =
+			{"beginYear": beginYear,
+			 "beginMonth":beginMonth,
+		     "beginDay": beginDay,
+			 "beginHours":beginHours };
+
+	
+	
+	$('#yuyue_date').setPicker({
+		isDate: true,
+		dateOptions: dataOptions,
+		resultEle:'#yuyue_date',
+		resultType: 'val'
+	})
+	
+	
+</script>
+
+
+	</body>
+
+</html>

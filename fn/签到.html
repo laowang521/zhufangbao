@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+			<title>签到</title>
+
+			<link href="../css/mui.min.css" rel="stylesheet" />
+			<link href="../css/style.css" rel="stylesheet" />
+
+			<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+
+		</head>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">签到</h1>
+			<a id="alertBtn" class="mui-icon  mui-pull-right title_font">积分规则</a>
+		</header>
+
+		<div class="mui-content" style="padding-bottom: 30px;">
+
+			<div class="qiandao_box">
+
+				<div class="mui-row qiandao_info1">
+
+					<ul class="mui-clearfix">
+						<li>日</li>
+						<li>一</li>
+						<li>二</li>
+						<li>三</li>
+						<li>四</li>
+						<li>五</li>
+						<li>六</li>
+
+					</ul>
+
+				</div>
+
+				<div id="sign_box">
+
+					<ul>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="qiandao_info">
+
+				<div class="item">
+					<label for="">签到天数</label>
+
+					<span><span id="sign_count">3</span>天</span>
+
+				</div>
+
+				<div class="item">
+					<label for="">可用积分</label>
+
+					<span><span id="store">1000</span>积分</span>
+
+				</div>
+
+			</div>
+
+			<input class="btn_com" type="submit" value="前往积分商城" />
+
+		</div>
+
+	</body>
+
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-2.1.1.min.js"></script>
+
+	<script>
+		//住房宝签到插件 2018.3.4 v1.0
+		;
+		(function($) {
+
+			window.Sign = function Sign(options) {
+
+				this.tem = '';
+				this.succ_day = null;
+				this.month_count = null;
+				this.week = null;
+				this.today = null;
+
+				//默认参数
+				var defaults = {
+					data: {},
+					sign_box: $('#sign_box'),
+					signedCls: 'signed',
+					sign_count: $('#sign_count')
+				}
+
+				var settings = $.extend({}, defaults, options); //合并参数    ｛｝防覆盖
+				this.data = settings.data;
+				this.sign_box = settings.sign_box;
+				this.signedCls = settings.signedCls;
+				this.sign_count = settings.sign_count;
+				this.init()
+
+			}
+
+			Sign.prototype.init = function() {
+
+				this.render();
+
+				var _this = this;
+
+				$(this.sign_box).find('li').eq(this.today + this.week - 1).on('tap', function() {
+
+					_this.toSign();
+				});
+
+			}
+
+			Sign.prototype.render = function() {
+				if(!this.data) {
+					return false;
+				}
+				this.succ_day = this.data.sign_date;
+				this.today = this.data.d[2];
+				$(this.sign_count).text(this.succ_day.length);
+				this.month_count = new Date(this.data.d[0], this.data.d[1], 0).getDate(); //当月天数
+				this.week = new Date([this.data.d[0], this.data.d[1], 1].join(',')).getDay(); //第一天星期几
+				//console.log(month_count);
+				//console.log(week);
+
+				var now_month = this.month_count + this.week;
+
+				for(var i = 0; i < now_month; i++) {
+					this.tem += ' <li></li>'
+				}
+
+				$(this.sign_box).find('ul').html(this.tem);
+				//渲染日期
+				for(var i = 0; i < this.month_count; i++) {
+					$(this.sign_box).find('li').eq(i + this.week).text(i + 1);
+
+				}
+
+				//渲染已签到到标记
+				var _this = this;
+				this.succ_day.forEach(function(i, v, array) {
+
+					$(_this.sign_box).find('li').eq(i + _this.week - 1).addClass(_this.signedCls);　　
+				});
+
+			};
+
+			Sign.prototype.toSign = function() {
+
+				if(this.data.isSign) {
+					alert('今天已经签到了,明天再来吧');
+					return false;
+				} else {
+					//$.ajax({}) 
+					//
+					$(this.sign_box).find('li').eq(this.today + this.week - 1).addClass(this.signedCls);
+					this.data.isSign = true;
+					alert('签到成功');
+					$(this.sign_count).text(function(i, origText) {
+						return(origText - 0) + 1
+					});
+				}
+
+			}
+
+		})(jQuery);
+	</script>
+
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+
+		$(function() {
+			//模拟数据
+			var data = {
+				"d": [2018, 02, 18], //今天的日期
+				"sign_date": [1, 3, 5, 7, 8, 9, 10, 11, 12, 20], //已签到日期
+				"isSign": false, //今天是否签到
+				"jifen": 1000
+			};
+
+			var ZFB_Sign = new Sign({
+				data: data, //数据[必选]
+				sign_box: '#sign_box', //盒子ele [可选]
+				signedCls: 'signed', //已签到的className [可选]
+				sign_count: '#sign_count' //放置签到天数的ele [可选]
+			});
+
+		})
+	</script>
+
+</html>

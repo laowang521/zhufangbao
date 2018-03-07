@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>物业报修</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow header_red">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">物业报修</h1>
+			<a id="alertBtn" class="mui-icon  mui-pull-right title_font">报修记录</a>
+		</header>
+		<!-- content  -->
+		<div class="mui-content">
+			<div class="new_gd mat10">
+				<!--蒙板-->
+				<div id="showUserPicker" class="msg_list que_type">
+					<div class="list_l ">
+						<span>选择类型</span>
+					</div>
+					<div class="list_r">
+						<span id="userResult"></span><i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+				<div class="question">
+					<textarea id="question_text" name="" rows="" cols="" placeholder="请简要描述报修问题，字数为6~256"></textarea>
+				</div>
+
+				<div class="up_img" id="up_img">
+
+				</div>
+			</div>
+		</div>
+		<br />
+		<button type="submit" class="btn_com">提交</button>
+
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			
+			$(function(){
+				
+			var baoxiuleixing = [{
+				id: '1',
+				text: '水电双气'
+			}, {
+				id: '2',
+				text: '公共区域'
+			}, {
+				id: '3',
+				text: '公共设置'
+			}];
+
+
+
+				$('#showUserPicker').setPicker({
+					data:baoxiuleixing,
+					resultEle:'#userResult',
+				});
+				
+				
+				
+			})
+
+			
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人资料</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+	</head>
+
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow">
+
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">个人资料</h1>
+			<a class="mui-icon  mui-pull-right title_font">保存</a>
+		</header>
+
+		<!-- content  -->
+		<div class="mui-content login_content">
+
+	
+			<div class="msg_list">
+				<div class="list_l list_l_01">
+					<span>头像</span>
+				</div>
+				<div class="list_r">
+					<div class="list_r_img"><img src="" alt="" /></div>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>昵称</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="请输入您的昵称" />
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>邻里号</span>
+				</div>
+				<div class="list_r">
+					<span>111111</span>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>性别</span>
+				</div>
+				<div class="list_r" id="choose_sex">
+					<span class="grzl_result">请选择</span><i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>职业</span>
+				</div>
+				<div class="list_r" id="choose_zhiye">
+					<span class="grzl_result">请选择</span><i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>星座</span>
+				</div>
+				<div class="list_r" id="choose_xingzuo">
+					<span class="grzl_result">请选择</span><i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>情感状况</span>
+				</div>
+				<div class="list_r" id="choose_qinggan">
+					<span class="grzl_result">未设置</span><i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>兴趣爱好</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="请输入，多个以逗号或空格隔开" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="msg_list">
+				<div class="list_l">
+					<span>个性签名</span>
+				</div>
+				<div class="list_r grzl_input_wrap">
+					<input type="text" placeholder="请输入个性签名，30字以内" id="" value="" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery-2.1.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+		$(function() {
+
+
+			var zhiye_data = [{
+				
+				text: '国家公务员'
+			}, {
+				
+				text: '专业技术人员'
+			}, {
+				
+				text: '企业管理人员'
+			}, {
+				
+				text: '工人'
+			}, {
+				
+				text: '农民'
+			}, {
+				
+				text: '医生'
+			}];
+			
+			var xingzuo_data = [{
+				
+				id: '1',
+				text: '白羊'
+			}, {
+				id: '2',
+				text: '金牛'
+			}, {
+				id: '3',
+				text: '灰狼'
+			}];
+			
+			var qinggan_data = [{
+				id: '1',
+				text: '单身'
+			}, {
+				id: '2',
+				text: '未婚'
+			}, {
+				id: '3',
+				text: '已婚'
+			},{
+				id: '4',
+				text: '离异'
+			},{
+				id: '5',
+				text: '丧偶'
+			}];
+			
+		$('#choose_sex').setPicker({
+
+				data: [{
+						text: '男'
+					},
+					{
+						text: '女'
+					}
+				],
+				resultEle: '.grzl_result'
+
+			});
+			
+			
+		$('#choose_zhiye').setPicker({
+				data:zhiye_data ,
+				resultEle: '.grzl_result'
+
+			});
+			
+			$('#choose_xingzuo').setPicker({
+				data:xingzuo_data ,
+				resultEle: '.grzl_result'
+
+			});
+			
+			$('#choose_qinggan').setPicker({
+				data:qinggan_data ,
+				resultEle: '.grzl_result'
+
+			});
+			
+		
+					
+					
+					
+					
+			
+			
+			
+			
+
+		})
+	</script>
+
+</html>

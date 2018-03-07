@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>SOS求助</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_573266_z87x62jmr52ymn29.css" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+	</head>
+	<body>
+		<!--  头 -->
+		<header class="mui-bar mui-bar-nav clear_shadow header_red">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">SOS求助</h1>
+			<a id="alertBtn" class="mui-icon  mui-pull-right title_font">求助记录</a>
+		</header>
+		<div class="yijianSOS">
+			一键SOS
+		</div>
+		<!-- content  -->
+		<div class="mui-content">
+			<div class="new_gd mat10">
+
+				<div class="SOS_list">
+					<ul>
+						<li>防火防盗</li>
+						<li>紧急移车</li>
+						<li>紧急上门</li>
+						<li>其他</li>
+					</ul>
+
+				</div>
+
+				<div class="question">
+					<p class="beizhu_title">备注</p>
+
+					<textarea id="question_text" name="" rows="" cols="" placeholder="请简要描述报修问题，字数为6~256"></textarea>
+
+				</div>
+
+			</div>
+		</div>
+		
+		<br />
+		<button type="submit" class="btn_com">确认求助</button>
+
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/user.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$('.SOS_list li').on('tap', function() {
+
+				$(this).addClass('active').siblings().removeClass('active')
+
+			});
+		</script>
+
+	</body>
+
+</html>
